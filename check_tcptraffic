@@ -8,20 +8,12 @@
 #
 # See  the INSTALL file for installation instructions
 #
-# Copyright (c) 2010-2011, ETH Zurich.
+# Copyright (c) 2010-2011, ETH Zurich
+# Copyright (c) 2010-2016, Matteo Corti
 #
 # This module is free software; you can redistribute it and/or modify it
 # under the terms of GNU general public license (gpl) version 3.
 # See the LICENSE file for details.
-#
-# RCS information
-# enable substitution with:
-#   $ svn propset svn:keywords "Id Revision HeadURL Source Date"
-#
-#   $Id$
-#   $Revision$
-#   $HeadURL$
-#   $Date$
 
 use 5.00800;
 
@@ -458,7 +450,7 @@ $status_msg = q{};
 $options = Monitoring::Plugin::Getopt->new(
     usage   => 'Usage: %s [OPTIONS]',
     version => $VERSION,
-    url     => 'https://trac.id.ethz.ch/projects/nagios_plugins',
+    url     => 'https://github.com/matteocorti/check_tcptraffic',
     blurb   => 'Monitors the amount of traffic on a given interface',
 );
 

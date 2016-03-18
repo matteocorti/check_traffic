@@ -1,11 +1,3 @@
-################################################################################
-# File version information:
-# $Id: check_updates.spec 1112 2009-12-10 16:35:09Z corti $
-# $Revision: 1112 $
-# $HeadURL: https://svn.id.ethz.ch/nagios_plugins/check_updates/check_updates.spec $
-# $Date: 2009-12-10 17:35:09 +0100 (Thu, 10 Dec 2009) $
-################################################################################
-
 %define version          2.2.5
 %define release          0
 %define sourcename       check_tcptraffic
@@ -24,7 +16,7 @@ License:   GPLv3+
 Packager:  Matteo Corti <matteo.corti@id.ethz.ch>
 Group:     Applications/System
 BuildRoot: %{_tmppath}/%{packagename}-%{version}-%{release}-root-%(%{__id_u} -n)
-Source:    http://www.id.ethz.ch/people/allid_list/corti/%{sourcename}-%{version}.tar.gz
+Source:    https://github.com/matteocorti/%{sourcename}/releases/download/v%{version}/%{sourcename}-%{version}.tar.gz
 
 # Fedora build requirement (not needed for EPEL{4,5})
 BuildRequires: perl(ExtUtils::MakeMaker)

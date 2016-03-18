@@ -159,12 +159,3 @@ define ngraph{
 	print_format            %2.2lf
         print_eol               left
         }
-
-# RCS information
-# enable substitution with:
-#   $ svn propset svn:keywords "Id Revision HeadURL Source Date"
-#
-#   $Id: check_tcptraffic 1204 2010-11-03 16:16:45Z corti $
-#   $Revision: 1204 $
-#   $HeadURL: https://svn.id.ethz.ch/nagios_plugins/check_tcptraffic/check_tcptraffic $
-#   $Date: 2010-11-03 17:16:45 +0100 (Wed, 03 Nov 2010) $

@@ -1,15 +1,6 @@
 # Load the Module::Install bundled in ./inc/
 use inc::Module::Install;
 
-################################################################################
-# Version information:
-#
-# $Id: Makefile.PL 1111 2009-12-09 07:12:23Z corti $
-# $Revision: 1111 $
-# $HeadURL: https://svn.id.ethz.ch/nagios_plugins/check_updates/Makefile.PL $
-# $Date: 2009-12-09 08:12:23 +0100 (Wed, 09 Dec 2009) $
-#
-
 ##############################################################################
 # Define metadata (we read it from the binary)
 

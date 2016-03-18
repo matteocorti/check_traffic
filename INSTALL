@@ -41,11 +41,14 @@ Install to a custom directory (CUSTOM_DIR)
 
 In the source directory run:
 
-    perl Makefile.PL INSTALLSCRIPT=CUSTOM_DIR
+    perl Makefile.PL INSTALLSITESCRIPT=CUSTOM_DIR
     make
     make install
 
-The man page is installed to /usr/share/man/man1/check_tcptraffic.1
+You can override the INSTALLSCRIPT, INSTALLNBIN or INSTALLSITESCRIPT
+variable depending on your perl installation.
+
+The man page is installed to /usr/share/man/man1/check_updates.1
 you can customize the path by setting INSTALLMAN1DIR as follows
 
     perl Makefile.PL INSTALLSCRIPT=CUSTOM_DIR INSTALLMAN1DIR=CUSTOM_MAN_DIR
@@ -62,6 +65,5 @@ Generate the man page with pod2man
 
     pod2man check_tcptraffic > CUSTOM_MAN_FILE
 
-Please report any installation problem to <matteo.corti@id.ethz.ch> or
-open a ticket at
-https://trac.id.ethz.ch/projects/nagios_plugins/newticket
+Please report any installation problem by opening a ticket at
+https://github.com/matteocorti/check_tcptraffic/issues
