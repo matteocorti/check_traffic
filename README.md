@@ -34,4 +34,4 @@ Since `/proc/net/dev` uses 32bit counters overflows are a problem
 | --------- | ------------------------- |
 | 10Mbit/s  | 55'                       |
 | 100Mbit/s | 5'8"                      |
-| 1GBit/s     32"                       |
+| 1GBit/s   | 32"                       |
