@@ -31,4 +31,4 @@ requires:
   version: 0
 resources:
   license: http://opensource.org/licenses/gpl-license.php
-version: 2.2.5
+version: 2.2.6

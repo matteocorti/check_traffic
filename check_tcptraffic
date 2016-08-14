@@ -21,6 +21,7 @@ use strict;
 use warnings;
 
 use Carp;
+use Data::Dumper;
 use English qw(-no_match_vars);
 use File::Basename;
 use Monitoring::Plugin::Threshold;
@@ -32,7 +33,7 @@ use Readonly;
 ################################################################################
 # constants
 
-our $VERSION = '2.2.5';
+our $VERSION = '2.2.6';
 
 Readonly my $MAX_LONG => 2**32;
 
@@ -81,7 +82,7 @@ sub debug {
     chomp $message;
 
     if ( $options->debug() ) {
-        print "[DEBUG] $message\n";    ## no critic (RequireCheckedSyscalls)
+        print "[DBG] $message\n";    ## no critic (RequireCheckedSyscalls)
     }
 
     if ( $options->debug_log() ) {
@@ -270,6 +271,42 @@ sub write_timer {
 }
 
 ##############################################################################
+# Usage     : $time = uptime()
+# Purpose   : returns the number of seconds since tha last boot
+# Returns   : returns the number of seconds since tha last boot
+# Arguments : n/a
+# Throws    : n/a
+# Comments  : n/a
+# See also  : n/a
+sub uptime {
+
+    my $dev_file = '/proc/uptime';
+    my $IN;     # file descriptor
+    my $result;
+
+    open $IN, q{<}, $dev_file    ## no critic (RequireBriefOpen)
+      or $plugin->nagios_exit( UNKNOWN, "Cannot open $dev_file: $OS_ERROR" );
+
+    while (<$IN>) {
+
+        chomp;
+
+	s/\ .*//mxs;
+	
+	$result =  $_;
+
+    }
+	
+    close $IN
+	or $plugin->nagios_exit( UNKNOWN, "Cannot close $dev_file: $OS_ERROR" );
+
+    debug("uptime $result");
+    
+    return $result;
+    
+}
+
+##############################################################################
 # Usage     : read_proc('eth0')
 # Purpose   : reads information about an interface in the proc file system
 # Returns   : an hash containing the interface info
@@ -364,9 +401,9 @@ sub read_proc {
                 while (<$TMP>) {
                     chomp;
                     ( $time, $in, $out ) = split;
-                    $data{diff} = time - $time;
-                    $data{in}   = $in;
-                    $data{out}  = $out;
+                    $data{diff}     = time - $time;
+                    $data{in}       = $in;
+                    $data{out}      = $out;
                     debug("reading old data: $time $in $out after $data{diff}");
                 }
 
@@ -486,7 +523,7 @@ $options->arg(
 );
 
 $options->arg(
-    spec     => 'debug',
+    spec     => 'debug|d',
     help     => 'debugging output',
     required => 0,
 );
@@ -556,7 +593,29 @@ $tmp = '/tmp/check_tcptraffic_status-' . $options->interface() . whoami();
 
 my %data = read_proc( $options->interface() );
 
-if ( $data{diff} > $max_check_time ) {
+# check if the files are older than the last boot
+
+my $uptime = uptime();
+
+if ( $data{diff} > $uptime ) {
+
+    warn Dumper \%data;
+    
+    verbose 'the time since last check ('
+      . $data{diff}
+      . 's) is greater than the uptime '
+      . $uptime
+      . "s): sleeping 1s to gather data again\n";
+
+    # the system was rebooted
+    
+    write_timer( $data{bytes_in}, $data{bytes_out} );
+
+    sleep 1;
+
+    %data = read_proc( $options->interface() );
+
+} elsif ( $data{diff} > $max_check_time ) {
 
     verbose 'the time from last check ('
       . $data{diff}
