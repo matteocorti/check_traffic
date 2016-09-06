@@ -52,7 +52,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc AUTHORS Changes NEWS README TODO COPYING COPYRIGHT nagiosgrapher
+%doc AUTHORS Changes NEWS README.md TODO COPYING COPYRIGHT nagiosgrapher
 %{nagiospluginsdir}/%{sourcename}
 %{_mandir}/man1/%{sourcename}.1*
 
