@@ -1,3 +1,7 @@
+2017-10-10  Matteo Corti  <matteo@corti.li>
+
+	* Makefile.PL: Perl 5.26 support ('.' missing from @INC)
+
 2016-08-14  Matteo Corti  <matteo@corti.li>
 
 	* check_tcptraffic: checks if the system was rebooted since last check

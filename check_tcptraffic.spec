@@ -1,4 +1,4 @@
-%define version          2.2.6
+%define version          2.2.7
 %define release          0
 %define sourcename       check_tcptraffic
 %define packagename      nagios-plugins-check-tcptraffic
@@ -57,6 +57,9 @@ rm -rf %{buildroot}
 %{_mandir}/man1/%{sourcename}.1*
 
 %changelog
+* Tue Oct 10 2017 Matteo Corti <matteo@corti.li> - 2.2.7-0
+- Updated to 2.2.7
+
 * Sun Aug 14 2016 Matteo Corti <matteo@corti.li> - 2.2.6-0
 - Updated to 2.2.6
 

@@ -1,4 +1,5 @@
 # Load the Module::Install bundled in ./inc/
+use lib '.'; # added since from Perl 5.26 '.' is no more in @INC
 use inc::Module::Install;
 
 ##############################################################################
@@ -20,6 +21,7 @@ requires 'File::Basename'                => 0;
 requires 'Monitoring::Plugin'            => 0;
 requires 'Monitoring::Plugin::Range'     => 0;
 requires 'Monitoring::Plugin::Threshold' => 0;
+requires 'Params::Validate'              => 0;
 requires 'Readonly'                      => 0;
 requires 'version'                       => 0;
 
