@@ -26,9 +26,10 @@ requires:
   Monitoring::Plugin: 0
   Monitoring::Plugin::Range: 0
   Monitoring::Plugin::Threshold: 0
+  Params::Validate: 0
   Readonly: 0
   perl: 5.8.0
   version: 0
 resources:
   license: http://opensource.org/licenses/gpl-license.php
-version: 2.2.6
+version: 2.2.7
