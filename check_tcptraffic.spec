@@ -1,5 +1,5 @@
 %define version          2.2.7
-%define release          0
+%define release          1
 %define sourcename       check_tcptraffic
 %define packagename      nagios-plugins-check-tcptraffic
 %define nagiospluginsdir %{_libdir}/nagios/plugins
@@ -22,6 +22,7 @@ Source:    https://github.com/matteocorti/%{sourcename}/releases/download/v%{ver
 BuildRequires: perl(ExtUtils::MakeMaker)
 
 Requires:  nagios-plugins
+Requires:  perl(Monitoring::Plugin::Threshold)
 
 %description
 check_tcptraffic is a Nagios plugin to monitor the amount of TCP traffic
@@ -57,6 +58,9 @@ rm -rf %{buildroot}
 %{_mandir}/man1/%{sourcename}.1*
 
 %changelog
+* Fri Jun 26 2017 Matteo Corti <matteo@corti.li> - 2.2.7-1
+- Added dependency to Monitoring::Plugin::Threshold
+
 * Tue Oct 10 2017 Matteo Corti <matteo@corti.li> - 2.2.7-0
 - Updated to 2.2.7
 
