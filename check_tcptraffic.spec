@@ -58,11 +58,11 @@ rm -rf %{buildroot}
 %{_mandir}/man1/%{sourcename}.1*
 
 %changelog
-* Fri Jun 26 2017 Matteo Corti <matteo@corti.li> - 2.2.7-1
-- Added dependency to Monitoring::Plugin::Threshold
-
 * Tue Oct 10 2017 Matteo Corti <matteo@corti.li> - 2.2.7-0
 - Updated to 2.2.7
+
+* Fri Jun 26 2017 Matteo Corti <matteo@corti.li> - 2.2.7-1
+- Added dependency to Monitoring::Plugin::Threshold
 
 * Sun Aug 14 2016 Matteo Corti <matteo@corti.li> - 2.2.6-0
 - Updated to 2.2.6
