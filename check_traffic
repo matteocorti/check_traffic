@@ -33,7 +33,7 @@ use Readonly;
 ################################################################################
 # constants
 
-our $VERSION = '2.2.7';
+our $VERSION = '3.0.0';
 
 Readonly my $MAX_LONG => 2**32;
 
