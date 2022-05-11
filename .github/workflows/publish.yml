@@ -56,7 +56,7 @@ jobs:
         run: |
           echo $PRE > ./prep-cmd.sh
           echo "${SSH_PRIVATE_KEY}" > id_rsa
-          docker run --network host -w /check_tcptraffic -v ${PWD}:/check_tcptraffic ${{ matrix.distro }} \
+          docker run --network host -w /check_traffic -v ${PWD}:/check_traffic ${{ matrix.distro }} \
               /bin/sh -c 'sh ./prep-cmd.sh \
               && uname -a \
               && whoami \

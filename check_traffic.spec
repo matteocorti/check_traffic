@@ -1,13 +1,13 @@
-%define version          2.2.7
-%define release          1
-%define sourcename       check_tcptraffic
-%define packagename      nagios-plugins-check-tcptraffic
+%define version          3.0.0
+%define release          0
+%define sourcename       check_traffic
+%define packagename      nagios-plugins-check-traffic
 %define nagiospluginsdir %{_libdir}/nagios/plugins
 
 # No binaries in this package
 %define debug_package    %{nil}
 
-Summary:   A Nagios plugin to monitor the amount of TCP traffic
+Summary:   A Nagios plugin to monitor the amount of network traffic
 Name:      %{packagename}
 Version:   %{version}
 Obsoletes: check_tcptraffic
@@ -25,11 +25,11 @@ Requires:  nagios-plugins
 Requires:  perl(Monitoring::Plugin::Threshold)
 
 %description
-check_tcptraffic is a Nagios plugin to monitor the amount of TCP traffic
+check_traffic is a Nagios plugin to monitor the amount of network traffic
 
-check_tcptraffic uses the /proc/net/dev Linux entry to compute the
+check_traffic uses the /proc/net/dev Linux entry to compute the
 amount of transferred bytes from the last plugin execution (temporary
-data is stored in the /tmp/check_tcptraffic-iface file)
+data is stored in the /tmp/check_traffic-iface file)
 
 %prep
 %setup -q -n %{sourcename}-%{version}

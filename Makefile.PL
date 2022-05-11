@@ -5,10 +5,10 @@ use inc::Module::Install;
 ##############################################################################
 # Define metadata (we read it from the binary)
 
-name              'check_tcptraffic';
-version_from      'check_tcptraffic';
-perl_version_from 'check_tcptraffic';
-all_from          'check_tcptraffic.pod';
+name              'check_traffic';
+version_from      'check_traffic';
+perl_version_from 'check_traffic';
+all_from          'check_traffic.pod';
 
 ##############################################################################
 # Specific dependencies
@@ -25,8 +25,7 @@ requires 'Params::Validate'              => 0;
 requires 'Readonly'                      => 0;
 requires 'version'                       => 0;
 
-install_script  'check_tcptraffic';
-
+install_script  'check_traffic';
 
 tests 't/*.t';
 test_requires 'Test::More'           => 0;
@@ -34,6 +33,6 @@ test_requires 'Test::More'           => 0;
 WriteMakefile(
     INSTALLSCRIPT        => '/usr/lib/nagios/plugins/contrib',
     INSTALLSITESCRIPT    => '/usr/lib/nagios/plugins/contrib',
-    MAN1PODS             => { 'check_tcptraffic.pod' => 'blib/man1/check_tcptraffic.1', },
+    MAN1PODS             => { 'check_traffic.pod' => 'blib/man1/check_traffic.1', },
     MAN3PODS             => { },
 );

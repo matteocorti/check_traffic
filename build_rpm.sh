@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NAME=check_tcptraffic
+NAME=check_traffic
 VERSION=$( grep "our\ \$VERSION\ =\ " "${NAME}" | sed "s/^[^']*'\([0-9.]*\)';/\1/" )
 TARBALL="${NAME}-${VERSION}.tar.gz"
 

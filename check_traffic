@@ -1,15 +1,15 @@
 #!perl
 
-# check_tcptraffic is a nagios Nagios plugin to monitor the amount of TCP traffic
+# check_traffic is a nagios Nagios plugin to monitor the amount of network traffic
 #
-# check_tcptraffic uses the /proc/net/dev Linux entry to compute the
+# check_traffic uses the /proc/net/dev Linux entry to compute the
 # amount of transferred bytes from the last plugin execution (temporary
-# data is stored in the /tmp/check_tcptraffic-iface file)
+# data is stored in the /tmp/check_traffic-iface file)
 #
 # See  the INSTALL file for installation instructions
 #
 # Copyright (c) 2010-2011, ETH Zurich
-# Copyright (c) 2010-2016, Matteo Corti
+# Copyright (c) 2010-2022, Matteo Corti
 #
 # This module is free software; you can redistribute it and/or modify it
 # under the terms of GNU general public license (gpl) version 3.
@@ -477,7 +477,7 @@ sub verbose {
 # Initialization
 
 $os_64_bit  = 0;
-$plugin     = Monitoring::Plugin->new( shortname => 'TCPTRAFFIC' );
+$plugin     = Monitoring::Plugin->new( shortname => 'TRAFFIC' );
 $status     = 0;
 $status_msg = q{};
 
@@ -487,7 +487,7 @@ $status_msg = q{};
 $options = Monitoring::Plugin::Getopt->new(
     usage   => 'Usage: %s [OPTIONS]',
     version => $VERSION,
-    url     => 'https://github.com/matteocorti/check_tcptraffic',
+    url     => 'https://github.com/matteocorti/check_traffic',
     blurb   => 'Monitors the amount of traffic on a given interface',
 );
 
@@ -586,7 +586,7 @@ $threshold = Monitoring::Plugin::Threshold->set_thresholds(
     critical => $critical_range,
 );
 
-$tmp = '/tmp/check_tcptraffic_status-' . $options->interface() . whoami();
+$tmp = '/tmp/check_traffic_status-' . $options->interface() . whoami();
 
 ########################
 # Check the proc entry

@@ -1,9 +1,9 @@
-Build and install check_tcptraffic
+Build and install check_traffic
 
 Dependencies
 ============
 
-check_tcptraffic depends on several Perl modules
+check_traffic depends on several Perl modules
 
 * Carp
 * English
@@ -63,7 +63,7 @@ your Perl interpreter and copy it to the desired location
 
 Generate the man page with pod2man
 
-    pod2man check_tcptraffic > CUSTOM_MAN_FILE
+    pod2man check_traffic > CUSTOM_MAN_FILE
 
 Please report any installation problem by opening a ticket at
-https://github.com/matteocorti/check_tcptraffic/issues
+https://github.com/matteocorti/check_traffic/issues
