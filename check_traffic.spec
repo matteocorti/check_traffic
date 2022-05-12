@@ -1,5 +1,5 @@
 %define version          3.0.0
-%define release          0
+%define release          1
 %define sourcename       check_traffic
 %define packagename      nagios-plugins-check-traffic
 %define nagiospluginsdir %{_libdir}/nagios/plugins
@@ -10,7 +10,7 @@
 Summary:   A Nagios plugin to monitor the amount of network traffic
 Name:      %{packagename}
 Version:   %{version}
-Obsoletes: check_tcptraffic
+Obsoletes: nagios-plugins-check-tcptraffic
 Release:   %{release}%{?dist}
 License:   GPLv3+
 Packager:  Matteo Corti <matteo.corti@id.ethz.ch>
