@@ -54,3 +54,4 @@ README.md
 t/00_modules.t
 TODO
 VERSION
+nagiosgrapher/check_traffic.ncfg
