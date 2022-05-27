@@ -164,7 +164,7 @@ sub running_on_linux {    ## no critic (RequireFinalReturn)
 
 ##############################################################################
 # Usage     : whoami()
-# Purpose   : retrieve the user runnging the process
+# Purpose   : retrieve the user running the process
 # Returns   : username
 # Arguments : n/a
 # Throws    : n/a
@@ -193,7 +193,7 @@ sub whoami {
 ##############################################################################
 # Usage     : assert_is_writable( 'filename' )
 # Purpose   : checks if the file can be written
-# Returns   : exits with UNKNOW status if not
+# Returns   : exits with UNKNOWN status if not
 # Arguments : n/a
 # Throws    : n/a
 # Comments  : n/a
@@ -272,8 +272,8 @@ sub write_timer {
 
 ##############################################################################
 # Usage     : $time = uptime()
-# Purpose   : returns the number of seconds since tha last boot
-# Returns   : returns the number of seconds since tha last boot
+# Purpose   : returns the number of seconds since the last boot
+# Returns   : returns the number of seconds since the last boot
 # Arguments : n/a
 # Throws    : n/a
 # Comments  : n/a
