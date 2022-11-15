@@ -10,7 +10,7 @@
 Summary:   A Nagios plugin to monitor the amount of network traffic
 Name:      %{packagename}
 Version:   %{version}
-Obsoletes: nagios-plugins-check-tcptraffic
+Obsoletes: nagios-plugins-check-tcptraffic <= 100
 Release:   %{release}%{?dist}
 License:   GPLv3+
 Packager:  Matteo Corti <matteo.corti@id.ethz.ch>
