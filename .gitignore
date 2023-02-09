@@ -1,0 +1,14 @@
+**~
+**.bak
+META.yml
+MYMETA.json
+MYMETA.yml
+Makefile
+check_updates-**
+**.tdy
+inc
+.DS_Store
+blib
+pm_to_blib
+.#**
+#**
