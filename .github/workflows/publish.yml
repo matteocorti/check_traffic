@@ -17,16 +17,11 @@ jobs:
       fail-fast: false
       matrix:
         distro:
-          - 'centos:7'
           - 'fedora:latest'
         include:
           - distro: 'fedora:latest'
             pre: >-
               dnf install -y sudo perl-Module-Install perl-Monitoring-Plugin perl-Perl-Critic rpm-build openssh-clients
-          - distro: 'centos:7'
-            pre: >-
-              yum install -y epel-release &&
-              yum install -y sudo perl-Module-Install perl-Monitoring-Plugin perl-Test-Simple perl-Perl-Critic rpm-build openssh-clients
 
     steps:
       - name: Git clone repository
